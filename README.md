@@ -2,6 +2,14 @@
 ### Group 2: Sus-city
 The published site can be viewed here: https://xscape.web.app/
 
+## Steps:
+
+cd frontend 
+npm run start
+cd ..
+cd backend
+npm run start
+
 ## Our Mission
 **How might we inform young adult car buyers in King County about carbon emissions from various types of cars to help them minimize the environmental impact of their commutes?**
 
