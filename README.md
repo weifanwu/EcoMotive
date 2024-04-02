@@ -4,11 +4,11 @@ The published site can be viewed here: https://xscape.web.app/
 
 ## Steps:
 
-# cd frontend 
-# npm run start
-# cd ..
-# cd backend
-# npm run start
+<p>cd frontend</p>
+<p>npm run start</p>
+<p>cd ..</p>
+<p>cd backend</p>
+<p>npm run start</p>
 
 ## Our Mission
 **How might we inform young adult car buyers in King County about carbon emissions from various types of cars to help them minimize the environmental impact of their commutes?**
