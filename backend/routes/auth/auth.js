@@ -23,6 +23,8 @@ passport.use(
 );
 
 passport.serializeUser(function (user, done) {
+  console.log("this is the user profile");
+  console.log(user);
   done(null, user);
 });
 

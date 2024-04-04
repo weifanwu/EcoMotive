@@ -1,7 +1,14 @@
 import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Avatar } from 'antd';
 
-function Navbar() {
+function Navbar(props) {
+	const history = useNavigate();
+
+	const redirectToProfile = () => {
+	  history("/Profile");
+	};
+
 	return (
 		<div>
 			<nav className="nav-bar fixed-top navbar navbar-expand-sm navbar-dark">
@@ -52,14 +59,21 @@ function Navbar() {
 								</NavLink>
 							</li>
 							<li className="nav-item">
-								<span onClick={async () => {
-									const backend = process.env.REACT_APP_BACKEND_HOST;
-									console.log("this is the backend url");
-									console.log(backend);
-									window.open(backend + "/auth/google", "_self");
-								}} to="/About" className="nav-link">
-									Login
-								</span>
+								{
+									(!props.profile) ? 
+									<span onClick={async () => {
+										const backend = process.env.REACT_APP_BACKEND_HOST;
+										console.log("this is the backend url");
+										console.log(backend);
+										window.open(backend + "/auth/google", "_self");
+									}} to="/About" className="nav-link">
+										Login
+									</span>
+									:
+									<Avatar onClick={() => {
+										redirectToProfile();
+									}} src={props.profile.avatar} />
+								}
 							</li>
 						</ul>
 					</div>

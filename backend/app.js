@@ -1,8 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var connect = require("./models/models.js");
 
 var google = require('./routes/auth/google');
 
@@ -17,6 +20,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
+    credentials: true,
+    maxAge: 3600,
+  })
+);
+
+app.use(async (req, res, next) => {
+  await connect();
+  next();
+});
 
 app.use('/auth', google);
 
