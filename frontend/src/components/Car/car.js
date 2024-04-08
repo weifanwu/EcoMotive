@@ -1,6 +1,29 @@
 import React from "react";
 
 export default function CarModel(props) {
+    const car = props.car;
+
+    const addToCarCollection = async (carModel) => {
+        try {
+            const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/addToCarCollection', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: props.profile.email, carTitle: carModel })
+            });
+
+            if (response.ok) {
+                // Handle success
+                console.log('Added to collection');
+            } else {
+                throw new Error('Failed to add to collection');
+            }
+        } catch (error) {
+            console.error(error);
+            // Handle error
+        }
+    };
 
     const getPriceCategory = (price) => {
         const numericPrice = parseFloat(price.replace(/,/g, ""));
@@ -11,7 +34,6 @@ export default function CarModel(props) {
         return "$$$$";
     };
 
-    const car = props.car;
 	return (<div className="car-card" key={car.title}>
         <h5 className="card-title px-3 pt-4">{car.title}</h5>
         <img src={car.image} alt={car.title} />
@@ -48,7 +70,10 @@ export default function CarModel(props) {
         >
             Visit Website <i class="bi bi-box-arrow-up-right ml-1"></i>
         </a>
-        <button>add to my collections</button>
+        <button onClick={() => {
+            props.profile.carCollections.push(car.title);
+            addToCarCollection(car.title);
+        }}>Add to my collections</button>
         </div>
         </div>)
 }
