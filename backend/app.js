@@ -8,6 +8,7 @@ var logger = require('morgan');
 var connect = require("./models/models.js");
 
 var google = require('./routes/auth/google');
+var cars = require('./routes/car/carModel.js');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(async (req, res, next) => {
 });
 
 app.use('/auth', google);
+app.use('/cars', cars);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

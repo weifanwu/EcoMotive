@@ -72,8 +72,7 @@ export const Box = (text) => {
 };
 
 const Results = ({ selectedOptions, cars }) => {
-  console.log(cars)
-  console.log(selectedOptions)
+
   let priceRange, carTypes, co2EmissionRange, mpgRange, savingsRange;
 
   // Price Range

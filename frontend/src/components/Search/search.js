@@ -14,6 +14,7 @@ export default function Search(props) {
   const [selectedPrices, setSelectedPrices] = useState([]);
 
   let cars = props.cars;
+  let profile = props.profile;
 
   useEffect(() => {
     const makes = [...new Set(cars.map((car) => car.make))];
@@ -288,7 +289,7 @@ export default function Search(props) {
           <div className="matched-cars">
             {filteredCars.length > 0 ? (
               filteredCars.map((car) => (
-                <CarModel car={car} />
+                <CarModel profile={profile} car={car} />
               ))
             ) : (
               <div className="no-results-message">
