@@ -14,7 +14,7 @@ function Navbar(props) {
 			<nav className="nav-bar fixed-top navbar navbar-expand-sm navbar-dark">
 				<div className="container-fluid">
 					<NavLink to="/" className="web-logo navbar-brand">
-						<img src="/imgs/logo.png" alt="X scape logo" className="logo-img" />
+						<img src="/imgs/logo.png" alt="EcoMotive" className="logo-img" />
 					</NavLink>
 
 					{/* Hamburger Menu Button */}
@@ -89,7 +89,7 @@ function Navbar(props) {
 					<img src="/imgs/logo.png" alt="Logo" />
 				</div>
 				<div className="footer-info">
-					<span>&copy; 2023 INFO 442 X-Scape</span>
+					<span>&copy; 2024 Capstone EcoMotive</span>
 				</div>
 			</footer>
 		</div>

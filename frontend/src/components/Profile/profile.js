@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CarModel from "../Car/car";
 
+
 export default function Profile(props) {
     let profile = props.profile;	  
     const [cars, setCars] = useState([]);
+    const [deleteCar, setDeleteCar] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,16 +31,19 @@ export default function Profile(props) {
         };
 
         fetchData();
-    }, []); // Empty dependency array to run only once on mount
+    }, [deleteCar, []]); // Empty dependency array to run only once on mount
 
 
 
 	  return (
 			<>
 				<div className="search">
-					<div>
+                <header className="main-header">
+                    <h2>Saved Cars: </h2>
+                </header>
+                    <div className="matched-cars">
 						{cars.map((car) => {
-							return <CarModel profile={profile} car={car} />;
+							return <CarModel profile={profile} car={car} deleteCar={deleteCar} setDeleteCar={setDeleteCar}/>;
 						})}
 					</div>
 				</div>

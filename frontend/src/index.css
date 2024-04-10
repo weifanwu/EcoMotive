@@ -762,7 +762,7 @@ body {
 	text-decoration: none;
 	border-radius: 5px;
 	display: inline-block;
-	margin-top: 10px;
+	margin: 20px 5px 0px 5px;
 }
 
 .search .filter-title {
@@ -820,6 +820,11 @@ input[type="radio"] {
 	opacity: 0;
 	font-size: 1em;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.role {
+	margin-top: 7px;
+	color: white;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -1574,7 +1579,7 @@ input[type="radio"] {
 	text-decoration: none;
 	border-radius: 5px;
 	display: inline-block;
-	margin-top: 10px;
+	margin: 5px;
 	width: 100%;
 	text-align: center;
 	

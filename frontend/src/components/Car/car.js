@@ -1,8 +1,12 @@
 import React from "react";
+import { useLocation } from 'react-router-dom';
+import {message} from 'antd';
 
 export default function CarModel(props) {
     const car = props.car;
-
+    const location = useLocation();
+    const pathname = location.pathname;
+    
     const addToCarCollection = async (carModel) => {
         try {
             const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/addToCarCollection', {
@@ -25,9 +29,32 @@ export default function CarModel(props) {
         }
     };
 
+    const deleteCarCollection = (carModel) => {
+        fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/deleteCarCollection', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: props.profile.email, carTitle: carModel })
+        })
+        .then(response => {
+            // Check if the request was successful
+            if (response.ok) {
+            return response.json(); // Parse the response body as JSON
+            } else {
+            throw new Error('Failed to delete car collection');
+            }
+        })
+        .then(data => {
+            console.log(data.message); // Output: "succeed!"
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
     const getPriceCategory = (price) => {
         const numericPrice = parseFloat(price.replace(/,/g, ""));
-    
         if (numericPrice < 25000) return "$";
         if (numericPrice >= 25000 && numericPrice < 35000) return "$$";
         if (numericPrice >= 35000 && numericPrice < 50000) return "$$$";
@@ -68,12 +95,34 @@ export default function CarModel(props) {
             rel="noopener noreferrer"
             className="info-btn"
         >
-            Visit Website <i class="bi bi-box-arrow-up-right ml-1"></i>
+            Visit Website
         </a>
-        <button onClick={() => {
-            props.profile.carCollections.push(car.title);
-            addToCarCollection(car.title);
-        }}>Add to my collections</button>
+        {(pathname === '/Profile') ?
+            <div
+                className="info-btn" 
+                onClick={() => {
+                const indexToRemove = props.profile.carCollections.findIndex(carModel => carModel.trim() === car.title.trim());
+                if (indexToRemove !== -1) {
+                    props.profile.carCollections.splice(indexToRemove, 1);
+                }
+                props.setDeleteCar(!props.deleteCar);
+                console.log(props.deleteCar);
+                deleteCarCollection(car.title);
+                message.success("The car is deleted!");
+            }}>
+                Delete
+            </div>
+        : 
+            <div 
+                className="info-btn" 
+                onClick={() => {
+                props.profile.carCollections.push(car.title);
+                addToCarCollection(car.title);
+                message.success("The car is added to your collections");
+            }}>
+                Add
+            </div>
+        }
         </div>
         </div>)
 }

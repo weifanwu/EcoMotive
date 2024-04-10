@@ -36,7 +36,7 @@ export default function About(props) {
 				<h1>Meet Our Team</h1>
 				<h2>
 					Meet the faces of the Informatics students at the University
-					of Washington who created X-Scape.
+					of Washington who created EcoMotive.
 				</h2>
 			</div>
 
@@ -49,15 +49,23 @@ export default function About(props) {
 						</a>
 					</div>
 					<img class="profile-image" src="/imgs/arianna.png" alt="Image 1" />
+					<div className="role">
+						<p>Business Analyst</p>
+						<p>UX Researcher</p>
+					</div>
 				</div>
 
 				<div className="image-container">
-					<div className="image-name">Ethan Wang
-						<a href="https://www.linkedin.com/in/ethanwang17/" target="_blank" rel="noopener noreferrer">
+					<div className="image-name">Jackie Chen
+						<a href="https://www.linkedin.com/in/jackie-chen-143078228/" target="_blank" rel="noopener noreferrer">
 							<img class="linkedin-logo" src="/imgs/linkedin.png" alt="LinkedIn" />
 						</a>
 					</div>
-					<img class="profile-image" src="/imgs/ethan.png" alt="Image 2" />
+					<img class="profile-image" src="/imgs/jackie.jpeg" alt="Image 2" />
+					<div className="role">
+						<p>Data Analyst</p>
+						<p>Software Engineer</p>
+					</div>
 				</div>
 
 				<div className="image-container">
@@ -67,26 +75,36 @@ export default function About(props) {
 						</a>
 					</div>
 					<img class="profile-image" src="/imgs/steph.jpeg" alt="Image 3" />
+					<div className="role">
+						<p>Project Manager</p>
+						<p>UX Designer</p>
+					</div>
 				</div>
 			</div>
 
 			<div className="image-row-2">
 				<div className="image-container">
-					<div className="image-name">Ella Tao
-						<a href="https://www.linkedin.com/in/yifei-tao-ella/" target="_blank" rel="noopener noreferrer">
+					<div className="image-name">Taylor Russon
+						<a href="https://www.linkedin.com/in/taylor-russon/" target="_blank" rel="noopener noreferrer">
 							<img class="linkedin-logo" src="/imgs/linkedin.png" alt="LinkedIn" />
 						</a>
 					</div>
-					<img class="profile-image" src="/imgs/ella.jpg" alt="Image 1" />
+					<img class="profile-image" src="/imgs/taylor.jpeg" alt="Image 1" />
+					<div className="role">
+						<p>UX Designer & Researcher</p>
+					</div>
 				</div>
 
 				<div className="image-container">
-					<div className="image-name">Cici Zhao
-						<a href="https://www.linkedin.com/in/xingyuan-cici-zhao-081b86247/" target="_blank" rel="noopener noreferrer">
+					<div className="image-name">Weifan Wu
+						<a href="https://www.linkedin.com/in/weifanwu/" target="_blank" rel="noopener noreferrer">
 							<img class="linkedin-logo" src="/imgs/linkedin.png" alt="LinkedIn" />
 						</a>
 					</div>
-					<img class="profile-image" src="/imgs/cici.png" alt="cici iamge" />
+					<img class="profile-image" src="/imgs/weifan.png" alt="cici iamge" />
+					<div className="role">
+						<p>Software Engineer</p>
+					</div>
 				</div>
 
 			</div>
@@ -109,7 +127,7 @@ export default function About(props) {
 					</p>
 					<p>
 						View our Github Repo:  <a href="https://github.com/UW-INFO442-AU23/sus-city" target="_blank" rel="noopener noreferrer">
-							X-Scape Repo
+							EcoMotive Repo
 						</a>
 					</p>
 				</div>

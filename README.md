@@ -1,4 +1,4 @@
-# X-SCAPE
+# EcoMotive
 ### Group 2: Sus-city
 The published site can be viewed here: https://xscape.web.app/
 
