@@ -12,6 +12,8 @@ import Search from "./components/Search/search";
 import Navbar from './components/Navbar/navbar';
 import About from './components/About/about';
 import Profile from './components/Profile/profile';
+import Learning from './components/Learning/learningHome.js';
+import Intro from './components/Learning/Intro.js'; 
 
 // mongodb+srv://weifan:info441@info441.wfotfpj.mongodb.net/
 
@@ -62,6 +64,8 @@ export default function App(props) {
               <Route path="/Search" element={<Search profile={profile} cars={cars}/>} />
               <Route path="/About" element={<About/>} />
               <Route path="/Profile" element={<Profile profile={profile}/>} />
+              <Route path="/Learning" element={<Learning />} />
+              <Route path="/Learning/Intro" element={<Intro />} />
           </Route>
         </Routes> 
       </div>

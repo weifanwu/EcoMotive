@@ -86,7 +86,24 @@ body {
 	color: var(--secondary-color);
 }
 
+.learning-modules-page {
+  position: relative;
+  z-index: 1;
+}
 
+.modules-wrapper {
+	margin-bottom: 3rem; 
+  }
+
+.learning-modules-title {
+	color: white;
+}
+
+.btn-custom-width {
+	width: 500px; 
+
+  }
+  
 
 
 /* Homepage Start */
@@ -1701,6 +1718,10 @@ input[type="radio"] {
 	position: relative;
 	width: 1512px;
 }
+
+.button-description {
+	font-size: 0.8rem; /* Adjust the font size as needed */
+  }
 
 
 /* responsive design */
