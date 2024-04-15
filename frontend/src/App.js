@@ -14,6 +14,12 @@ import About from './components/About/about';
 import Profile from './components/Profile/profile';
 import Learning from './components/Learning/learningHome.js';
 import Intro from './components/Learning/Intro.js'; 
+import Charging from './components/Learning/Charging.js';
+import Costs from './components/Learning/Costs.js';
+import Maintenance from './components/Learning/Maintenance.js';
+import Environment from './components/Learning/Environment.js';
+import Future from './components/Learning/Future.js';
+import FAQs from './components/Learning/FAQs.js'
 
 // mongodb+srv://weifan:info441@info441.wfotfpj.mongodb.net/
 
@@ -66,6 +72,12 @@ export default function App(props) {
               <Route path="/Profile" element={<Profile profile={profile}/>} />
               <Route path="/Learning" element={<Learning />} />
               <Route path="/Learning/Intro" element={<Intro />} />
+              <Route path="/Learning/Charging" element={<Charging />} />
+              <Route path="/Learning/Costs" element={<Costs />} />
+              <Route path="/Learning/Maintenance" element={<Maintenance />} />
+              <Route path="/Learning/Environment" element={<Environment />} />
+              <Route path="/Learning/Future" element={<Future />} />
+              <Route path="/Learning/FAQs" element={<FAQs />} />
           </Route>
         </Routes> 
       </div>
