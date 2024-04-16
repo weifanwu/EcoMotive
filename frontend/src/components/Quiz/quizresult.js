@@ -129,11 +129,6 @@ const Results = ({ selectedOptions, cars }) => {
   };
   savingsRange = savingsMapping[selectedOptions[4]];
 
-  console.log(priceRange)
-  console.log(carTypes)
-  console.log(co2EmissionRange)
-  console.log(mpgRange)
-  console.log(savingsRange)
   
 
   const isInRange = (value, range) => value >= range[0] && value <= range[1];

@@ -46,8 +46,6 @@ export default function App(props) {
           });
         })
         .then((resObject) => {
-          console.log("this is the resObject");
-          console.log(resObject);
           setCars(resObject);
         })
         .catch((err) => {
@@ -72,8 +70,6 @@ export default function App(props) {
           });
         })
         .then((resObject) => {
-          console.log("this is the resObject");
-          console.log(resObject);
           setProfile(resObject.user);
         })
         .catch((err) => {

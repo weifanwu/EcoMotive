@@ -71,7 +71,7 @@ router.get("/login/success", async (req, res) => {
           success: true,
           message: "successfull",
           user: findUser,
-          //   cookies: req.cookies
+          cookies: req.cookies
         });
       }
     } else {
