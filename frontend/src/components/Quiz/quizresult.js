@@ -1,5 +1,6 @@
 import { Carousel } from 'bootstrap';
 import React from 'react';
+import CarModel from '../Car/car';
 
 const car_card = (car) => {
   return (
@@ -156,9 +157,7 @@ const Results = ({ selectedOptions, cars }) => {
 
   const car1 = filteredCars.length < 2 ? cars[0] : filteredCars[0]
   const car2 = filteredCars.length < 2 ? cars[1] : filteredCars[1]
-  console.log(filteredCars.length === 0)
-  console.log(car1)
-  console.log(car2)
+
   return (
     <div className="quiz-result">
       <div className="title-container">
@@ -167,11 +166,11 @@ const Results = ({ selectedOptions, cars }) => {
       {
         filteredCars.length === 1 ? 
           <div className="body-container">
-            {car_card(filteredCars[0])}
+            <CarModel car={filteredCars[0]}/>
           </div> : 
           <div className="body-container">
-            {car_card(car1)}
-            {car_card(car2)}
+            <CarModel car={car1}/>
+            <CarModel car={car2}/>
           </div>
       }
       <div className="link-container">

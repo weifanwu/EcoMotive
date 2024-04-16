@@ -24,13 +24,39 @@ import FAQs from './components/Learning/FAQs.js'
 // mongodb+srv://weifan:info441@info441.wfotfpj.mongodb.net/
 
 export default function App(props) {
-    let cars = props.cars;
+    const [cars, setCars] = useState([]);
     const [profile, setProfile] = useState(null);
     const getUserInfo = process.env.REACT_APP_BACKEND_HOST + "/auth/login/success";
+    const getCars = process.env.REACT_APP_BACKEND_HOST + "/cars/getAllCarModels";
 
+    const getAllCars = async () => {
+      fetch(getCars, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+        credentials: "include",
+      })
+        .then((response) => {
+          if (response.status === 200) return response.json();
+          return response.json().then((errorData) => {
+            throw new Error(errorData.message);
+          });
+        })
+        .then((resObject) => {
+          console.log("this is the resObject");
+          console.log(resObject);
+          setCars(resObject);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
 
-    const getUser = async () => {
-      await fetch(getUserInfo, {
+    const getUser = () => {
+      fetch(getUserInfo, {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -56,6 +82,7 @@ export default function App(props) {
     };
 
     useEffect(() => {
+      getAllCars();
       getUser();
     }, []);
 

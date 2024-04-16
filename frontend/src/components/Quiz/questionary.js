@@ -5,7 +5,7 @@ import Results from './quizresult';
 const quiztitle = [
   'What price range are you looking for?',
   'Which type of powertrain do you prefer for your next vehicle?',
-  'What level of CO2 emissions are you comfortable with for your next vehicle?',
+  'What level of CO2 emissionfs are you comfortable with for your next vehicle?',
   'What level of fuel efficiency are you looking for in your next vehicle?',
   'What is your expectation for cost savings or additional expenses over five years of vehicle ownership?',
 ];
