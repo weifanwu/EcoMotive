@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", process.env.FRONTEND_HOST],
     methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
     credentials: true,
     maxAge: 3600,
