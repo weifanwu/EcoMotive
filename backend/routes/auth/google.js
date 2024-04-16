@@ -13,10 +13,10 @@ router.use(
     resave: false,
     saveUninitialized: true,
     // comment this in the local environment ->
-    // cookie: {
-    //   sameSite: 'none',
-    //   secure: true
-    // }
+    cookie: {
+      sameSite: 'none',
+      secure: true
+    }
     // <- comment this in the local environment
   })
 );
