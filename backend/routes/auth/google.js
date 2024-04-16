@@ -64,7 +64,7 @@ router.get("/login/success", async (req, res) => {
             "carCollections": [],
             "avatar": avatar
           },
-          //   cookies: req.cookies
+          cookies: req.cookies
         });
       } else {
         res.status(200).json({

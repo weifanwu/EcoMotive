@@ -68,8 +68,6 @@ function Navbar(props) {
 									(!props.profile) ? 
 									<span onClick={async () => {
 										const backend = process.env.REACT_APP_BACKEND_HOST;
-										console.log("this is the backend url");
-										console.log(backend);
 										window.open(backend + "/auth/google", "_self");
 									}} to="/About" className="nav-link">
 										Login
