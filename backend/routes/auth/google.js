@@ -9,7 +9,7 @@ require("./auth.js");
 
 router.use(
   session({
-    secret: "cats",
+    secret: "weifan",
     resave: false,
     saveUninitialized: true,
     // comment this in the local environment ->

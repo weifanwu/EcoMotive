@@ -30,7 +30,7 @@ export default function App(props) {
     const getCars = process.env.REACT_APP_BACKEND_HOST + "/cars/getAllCarModels";
 
     const getAllCars = async () => {
-      fetch(getCars, {
+      await fetch(getCars, {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -53,8 +53,8 @@ export default function App(props) {
         });
     }
 
-    const getUser = () => {
-      fetch(getUserInfo, {
+    const getUser = async () => {
+      await fetch(getUserInfo, {
         method: "GET",
         headers: {
           Accept: "application/json",
