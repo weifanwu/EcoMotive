@@ -12,6 +12,8 @@ export default function Search(props) {
   const [uniqueDrives, setUniqueDrives] = useState([]);
   const [selectedEmissions, setSelectedEmissions] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
+  const [collections, setCollections] = useState([]);
+  const [deleteCar, setDeleteCar] = useState(false);
 
   let cars = props.cars;
   let profile = props.profile;
@@ -131,6 +133,36 @@ export default function Search(props) {
     });
     setFilteredCars(matchedCars);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/allCarCollections', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ titles: profile.carCollections }) // Replace with your array of titles
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const current = [];
+                for (let i = 0; i < data.cars.length; i++) {
+                    current.push(data.cars[i].title);
+                }
+                setCollections(current);
+            } else {
+                throw new Error('Failed to fetch data');
+            }
+        } catch (error) {
+            console.error(error);
+            // Handle error
+        }
+    };
+
+    fetchData();
+}, [[deleteCar], []]);
 
   useEffect(applyFilters, [
     selectedMake,
@@ -289,7 +321,7 @@ export default function Search(props) {
           <div className="matched-cars">
             {filteredCars.length > 0 ? (
               filteredCars.map((car) => (
-                <CarModel profile={profile} car={car} />
+                <CarModel  deleteCar={deleteCar} setDeleteCar={setDeleteCar} collections={collections} profile={profile} car={car} />
               ))
             ) : (
               <div className="no-results-message">

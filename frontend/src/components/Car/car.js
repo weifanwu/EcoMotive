@@ -1,12 +1,15 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import {message} from 'antd';
 
 export default function CarModel(props) {
     const car = props.car;
     const location = useLocation();
     const pathname = location.pathname;
-    
+    const collections = props.collections;
+
     const addToCarCollection = async (carModel) => {
         try {
             const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/addToCarCollection', {
@@ -97,7 +100,7 @@ export default function CarModel(props) {
         >
             Visit Website
         </a>
-        {(pathname === '/Profile') ?
+        {(pathname === '/Profile' || collections.includes(car.title)) ?
             <div
                 className="info-btn" 
                 onClick={() => {
@@ -110,17 +113,18 @@ export default function CarModel(props) {
                 deleteCarCollection(car.title);
                 message.success("The car is deleted!");
             }}>
-                Delete
+                <FavoriteIcon />
             </div>
         : 
             <div 
                 className="info-btn" 
                 onClick={() => {
                 props.profile.carCollections.push(car.title);
+                props.setDeleteCar(!props.deleteCar);
                 addToCarCollection(car.title);
                 message.success("The car is added to your collections");
             }}>
-                Add
+                <FavoriteBorderIcon />
             </div>
         }
         </div>
