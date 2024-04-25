@@ -1,5 +1,5 @@
 import { Carousel } from 'bootstrap';
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import CarModel from '../Car/car';
 
 const car_card = (car) => {
@@ -72,10 +72,10 @@ export const Box = (text) => {
   );
 };
 
-const Results = ({ selectedOptions, cars }) => {
-
+const Results = ({ selectedOptions, cars, profile }) => {
+  const [collections, setCollections] = useState([]);
   let priceRange, carTypes, co2EmissionRange, mpgRange, savingsRange;
-
+  const [deleteCar, setDeleteCar] = useState(false);
   // Price Range
   const priceMapping = {
     'Under $30,000': [0, 30000],
@@ -148,10 +148,44 @@ const Results = ({ selectedOptions, cars }) => {
 
   filteredCars.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
 
-  console.log(filteredCars)
 
   const car1 = filteredCars.length < 2 ? cars[0] : filteredCars[0]
   const car2 = filteredCars.length < 2 ? cars[1] : filteredCars[1]
+
+  const fetchData = async () => {
+    try {
+        const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/allCarCollections', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ titles: profile.carCollections }) // Replace with your array of titles
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            const current = [];
+            for (let i = 0; i < data.cars.length; i++) {
+                current.push(data.cars[i].title);
+            }
+            setCollections(current);
+        } else {
+            throw new Error('Failed to fetch data');
+        }
+    } catch (error) {
+        console.error(error);
+        // Handle error
+    }
+};
+
+// Initial fetch when the component is first rendered
+useEffect(() => {
+    fetchData();
+}, []); // Empty dependency array for initial fetch
+
+useEffect(() => {
+  fetchData();
+}, [deleteCar]); // Empty dependency array for initial fetch
 
   return (
     <div className="quiz-result">
@@ -161,11 +195,11 @@ const Results = ({ selectedOptions, cars }) => {
       {
         filteredCars.length === 1 ? 
           <div className="body-container">
-            <CarModel car={filteredCars[0]}/>
+            <CarModel style={{ margin: '1000px' }} deleteCar={deleteCar} setDeleteCar={setDeleteCar} profile={profile} collections={collections} car={filteredCars[0]}/>
           </div> : 
           <div className="body-container">
-            <CarModel car={car1}/>
-            <CarModel car={car2}/>
+            <CarModel deleteCar={deleteCar} setDeleteCar={setDeleteCar} profile={profile} collections={collections} car={car1}/>
+            <CarModel deleteCar={deleteCar} setDeleteCar={setDeleteCar} profile={profile} collections={collections} car={car2}/>
           </div>
       }
       <div className="link-container">

@@ -134,35 +134,42 @@ export default function Search(props) {
     setFilteredCars(matchedCars);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/allCarCollections', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ titles: profile.carCollections }) // Replace with your array of titles
-            });
+  const fetchData = async () => {
+    try {
+        const response = await fetch(process.env.REACT_APP_BACKEND_HOST + '/cars/allCarCollections', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ titles: profile.carCollections }) // Replace with your array of titles
+        });
 
-            if (response.ok) {
-                const data = await response.json();
-                const current = [];
-                for (let i = 0; i < data.cars.length; i++) {
-                    current.push(data.cars[i].title);
-                }
-                setCollections(current);
-            } else {
-                throw new Error('Failed to fetch data');
+        if (response.ok) {
+            const data = await response.json();
+            const current = [];
+            for (let i = 0; i < data.cars.length; i++) {
+                current.push(data.cars[i].title);
             }
-        } catch (error) {
-            console.error(error);
-            // Handle error
+            setCollections(current);
+        } else {
+            throw new Error('Failed to fetch data');
         }
-    };
+    } catch (error) {
+        console.error(error);
+        // Handle error
+    }
+};
 
+// Initial fetch when the component is first rendered
+useEffect(() => {
     fetchData();
-}, [[deleteCar], []]);
+}, []); // Empty dependency array for initial fetch
+
+// Refetch data when deletecar changes
+useEffect(() => {
+    fetchData();
+}, [deleteCar]); // Dependency array with deletecar for refetch
+
 
   useEffect(applyFilters, [
     selectedMake,

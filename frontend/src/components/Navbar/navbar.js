@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { Avatar } from 'antd';
+import { Avatar, Dropdown, Button } from 'antd';
 
 function Navbar(props) {
 	const history = useNavigate();
@@ -73,16 +73,23 @@ function Navbar(props) {
 										Login
 									</span>
 									:
+									<Dropdown
+									dropdownRender={() => (
+										<Button style={{ marginLeft: "10px"}} onClick={async () => {
+											window.open(process.env.REACT_APP_BACKEND_HOST + "/auth/logout", "_self");
+										  }}>Logout</Button>
+									)}
+								  >
 									<Avatar onClick={() => {
 										redirectToProfile();
 									}} src={props.profile.avatar} />
+								  </Dropdown>
 								}
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-
 			<main>
 				<Outlet />
 			</main>

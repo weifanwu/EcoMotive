@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Quizbody from './quizbody';
 import Results from './quizresult';
 
@@ -19,10 +19,11 @@ const quizzes = [
 ];
 
 export default function Questionary(props){
+  const profile = props.profile;
   let cars = props.cars;
   const [currentQuiz, setCurrentQuiz] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
-
+  const [collections, setCollections] = useState([]);
   const handleSelectOption = (option) => {
     const newSelectedOptions = [...selectedOptions, option];
     setSelectedOptions(newSelectedOptions);
@@ -40,6 +41,7 @@ export default function Questionary(props){
   };
 
 
+
   return (
     <div>
       {currentQuiz < quizzes.length ? (
@@ -51,7 +53,7 @@ export default function Questionary(props){
           onPrevious={handlePrevious}
         />
       ) : (
-        <Results selectedOptions={selectedOptions} cars={cars}/>
+        <Results selectedOptions={selectedOptions} cars={cars} profile={profile}/>
       )}
     </div>
   );
