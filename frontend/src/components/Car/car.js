@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import LaunchIcon from '@mui/icons-material/Launch';
 import {message} from 'antd';
 
 export default function CarModel(props) {
@@ -99,6 +100,7 @@ export default function CarModel(props) {
             className="info-btn"
         >
             Visit Website
+            <LaunchIcon />
         </a>
         {(pathname === '/Profile' || collections.includes(car.title)) ?
             <div

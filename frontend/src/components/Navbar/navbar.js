@@ -96,7 +96,7 @@ function Navbar(props) {
 
 			<footer className="footer">
 				<div className="footer-logo">
-					<img src="/imgs/logo.png" alt="Logo" />
+					<img src="/imgs/" alt="Logo" />
 				</div>
 				<div className="footer-info">
 					<span>&copy; 2024 Capstone EcoMotive</span>
