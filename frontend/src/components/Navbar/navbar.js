@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { Avatar, Dropdown, Button } from 'antd';
+import { Avatar, Dropdown, Button, Menu } from 'antd';
 
 function Navbar(props) {
 	const history = useNavigate();
@@ -39,23 +39,30 @@ function Navbar(props) {
 								</NavLink>
 							</li>
 							<li className="nav-item">
-								<NavLink to="/Search" className="nav-link">
-									Search
-								</NavLink>
-							</li>
-							<li className="nav-item">
-								<NavLink to="/Quiz" className="nav-link">
-									Quiz
-								</NavLink>
+							<Dropdown
+								overlay={(
+									<Menu>
+										<Menu.Item key="search">
+											<NavLink to="/Search">Search</NavLink>
+										</Menu.Item>
+										<Menu.Item key="quiz">
+											<NavLink to="/Quiz">Quiz</NavLink>
+										</Menu.Item>
+										<Menu.Item key="compare">
+											<NavLink to="/Compare">Compare</NavLink>
+										</Menu.Item>
+									</Menu>
+								)}
+								placement="bottomCenter"
+							>
+								<a className="nav-link" onClick={e => e.preventDefault()}>
+									Explore <span className="caret"></span>
+								</a>
+							</Dropdown>
 							</li>
 							<li className="nav-item">
 								<NavLink to="/Learning" className="nav-link">
 									Learning
-								</NavLink>
-							</li>
-							<li className="nav-item">
-								<NavLink to="/Compare" className="nav-link">
-									Compare
 								</NavLink>
 							</li>
 							<li className="nav-item">
@@ -69,21 +76,25 @@ function Navbar(props) {
 									<span onClick={async () => {
 										const backend = process.env.REACT_APP_BACKEND_HOST;
 										window.open(backend + "/auth/google", "_self");
-									}} to="/About" className="nav-link">
+									}} className="nav-link">
 										Login
 									</span>
 									:
 									<Dropdown
-									dropdownRender={() => (
-										<Button style={{ marginLeft: "10px"}} onClick={async () => {
-											window.open(process.env.REACT_APP_BACKEND_HOST + "/auth/logout", "_self");
-										  }}>Logout</Button>
+									overlay={(
+										<Menu>
+											<Menu.Item key="logout">
+												<Button style={{ marginLeft: "10px"}} onClick={async () => {
+													window.open(process.env.REACT_APP_BACKEND_HOST + "/auth/logout", "_self");
+												}}>Logout</Button>
+											</Menu.Item>
+										</Menu>
 									)}
-								  >
+								>
 									<Avatar onClick={() => {
 										redirectToProfile();
 									}} src={props.profile.avatar} />
-								  </Dropdown>
+								</Dropdown>
 								}
 							</li>
 						</ul>
