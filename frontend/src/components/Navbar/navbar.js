@@ -50,7 +50,7 @@ function Navbar(props) {
 							</li>
 							<li className="nav-item">
 								<NavLink to="/Learning" className="nav-link">
-									Learning
+									Learn
 								</NavLink>
 							</li>
 							<li className="nav-item">
