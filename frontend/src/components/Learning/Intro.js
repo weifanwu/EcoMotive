@@ -72,6 +72,12 @@ const SideNavbarPage = () => {
                     {modules.map((module, index) => (
                         <div key={index} id={module.id} className="mt-5">
                             <h2>{module.name}</h2>
+                            {(module.id === "Explanation") && (
+                                <iframe style={{
+                                    margin: "10px",
+                                    border: "1px solid white"
+                                }} className="video" width="560" height="315" src="https://www.youtube.com/embed/GHGXy_sjbgQ?si=VbGdeiD1Wgd8jpbS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            )}
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}
