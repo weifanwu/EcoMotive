@@ -10,8 +10,7 @@ const SideNavbarPage = () => {
             paragraphs: [
                 "Introduced more than 100 years ago, electric cars are seeing a rise in popularity today for many of the same reasons they were first popular.",
                 "Electric vehicles have a rich history dating back to the 19th century. The inception of electric mobility can be traced to inventors like Thomas Davenport and Robert Anderson, who created the earliest electric vehicles.",
-                "However, it wasn't until the late 20th century that EVs gained widespread attention.",
-                "Whether it’s a hybrid, plug-in hybrid, or all-electric, the demand for electric drive vehicles will continue to climb as prices drop and consumers look for ways to save money at the pump."
+                "However, it wasn't until the late 20th century that EVs gained widespread attention. Whether it’s a hybrid, plug-in hybrid, or all-electric, the demand for electric drive vehicles will continue to climb as prices drop and consumers look for ways to save money at the pump."
             ]
         },
         { 
@@ -25,18 +24,14 @@ const SideNavbarPage = () => {
             name: 'Types of EVs', 
             id: 'Types', 
             paragraphs: [
-                "There are several types of electric vehicles, including battery electric vehicles (BEVs), plug-in hybrid electric vehicles (PHEVs), and hybrid electric vehicles (HEVs).",
-                "Battery electric vehicles (BEVs) run entirely on electricity and do not have an internal combustion engine.",
-                "Plug-in hybrid electric vehicles (PHEVs) have both an internal combustion engine and an electric motor, and they can be plugged in to charge the battery.",
-                "Hybrid electric vehicles (HEVs) have an internal combustion engine and an electric motor, but they cannot be plugged in to charge the battery; instead, the battery is charged through regenerative braking and the internal combustion engine."
+                ""
             ]
         },
         { 
             name: 'Advantages of EVs', 
             id: 'Advantages', 
             paragraphs: [
-                "Embracing EVs brings forth a multitude of advantages.",
-                "From an environmental standpoint, EVs contribute to reduced air pollution and greenhouse gas emissions, fostering a cleaner and healthier planet.",
+                "Embracing EVs brings forth a multitude of advantages. From an environmental standpoint, EVs contribute to reduced air pollution and greenhouse gas emissions, fostering a cleaner and healthier planet.",
                 "Economically, owners benefit from lower operating costs, as electricity is generally more affordable than traditional fuels. Government incentives further sweeten the deal, encouraging the transition to electric mobility.",
                 "Technologically, electric vehicles showcase innovations in battery technology and smart connectivity, paving the way for a sustainable and interconnected future.",
                 "The advantages of EVs extend beyond individual ownership, influencing global energy sustainability and transportation trends."
@@ -63,7 +58,7 @@ const SideNavbarPage = () => {
                     <Button key={index} onClick={() => scrollToSection(module.id)} className="btn-block mb-2" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>{module.name}</Button>
                 ))}
                 <Link to="/learning">
-                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>Go Back</Button>
+                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: "var(--primary-color)", border: '1px solid black'}}>Go Back</Button>
                 </Link>
             </div>
             <div className="flex-grow-1 ml-5 text-white" style={{ paddingTop: '70px' }}>
@@ -78,9 +73,13 @@ const SideNavbarPage = () => {
                                     border: "1px solid white"
                                 }} className="video" width="560" height="315" src="https://www.youtube.com/embed/GHGXy_sjbgQ?si=VbGdeiD1Wgd8jpbS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             )}
+                            {(module.id === "Types") && (
+                                <img className="infographic" src='/imgs/typesofevs.jpg'/>
+                            )}
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}
+                            <hr className="section-separation-line"></hr>
                         </div>
                     ))}
                 </Container>

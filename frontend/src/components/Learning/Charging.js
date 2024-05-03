@@ -8,28 +8,14 @@ const SideNavbarPage = () => {
             name: 'Range of EVs', 
             id: 'Range', 
             paragraphs: [
-                "The range of modern electric vehicles generally varies on a single charge",
-                "the maximum range we can get from EVs is more than five times what it was",
-                "However, it wasn't until the late 20th century that EVs gained widespread attention.",
-                "Batteries are now competing with petrol and diesel on cost"
+                "The range of modern electric vehicles generally varies on a single charge, the maximum range we can get from EVs is more than five times what it was. However, it wasn't until the late 20th century that EVs gained widespread attention. Batteries are now competing with petrol and diesel on cost."
             ]
         },
         { 
             name: 'Charging Levels', 
             id: 'Levels', 
             paragraphs: [
-                `Level 1: 
-                120 volts, through a common residential AC outlet
-                Slowest method
-                Best for overnight charging`,
-                `Level 2: 
-                240 volts, higher rate AC charging
-                Faster method
-                Best for home, workplace, and public charging`,
-                `DC fast charging: 
-                High-voltage direct current, rapid charge
-                Fastest method
-                Best for long road trips, can be found along heavy traffic areas`
+                ''
                 
             ]
         },
@@ -42,19 +28,14 @@ const SideNavbarPage = () => {
             ]
         },
         { 
-            name: 'Home Charging', 
+            name: 'Home vs. Public Charging', 
             id: 'Home', 
             paragraphs: [
                 "Charging stations can be installed in garages or driveways to provide a convenient and cost-effective charging option for EV owners. Installation may require help from a professional, but is a one time thing that will allow drivers to start their day with a full battery.",
-            ]
-        },
-        { 
-            name: 'Public Charging', 
-            id: 'Public', 
-            paragraphs: [
                 `Public charging usually consists of Level 2 chargers in parking lots or DC fast charger located along highways and major routes. Specifically, Tesla Superchargers offer extremely fast charging speeds that make it easy for drivers be able to travel long distances without stopping for long.`
             ]
         },
+   
     ];
 
     // Function to scroll to the corresponding section
@@ -80,7 +61,7 @@ const SideNavbarPage = () => {
                 ))}
                 {/* Back button */}
                 <Link to="/learning">
-                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>Go Back</Button>
+                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: "var(--primary-color)", border: '1px solid black' }}>Go Back</Button>
                 </Link>
             </div>
             {/* Main Content */}
@@ -91,10 +72,21 @@ const SideNavbarPage = () => {
                     {modules.map((module, index) => (
                         <div key={index} id={module.id} className="mt-5">
                             <h2>{module.name}</h2>
+                            {(module.id === "Home") && (
+                                <iframe style={{
+                                    margin: "10px",
+                                    border: "1px solid white"
+                                }} className="video" width="560" height="315" src="https://www.youtube.com/embed/9EquviskBQQ?si=IfwGDfBClKjJj0Gi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                
+                            )}
+                            {(module.id === "Levels") && (
+                                <img className="infographic" src='/imgs/chargingguide.jpeg'/>
+                            )}
                             {/* Render paragraphs */}
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}
+                            <hr className="section-separation-line"></hr>
                         </div>
                     ))}
                 </Container>

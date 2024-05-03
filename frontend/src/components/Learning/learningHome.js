@@ -28,7 +28,7 @@ const LearningModulesPage = () => {
                       block // Make button full-width
                     >
                       <div>
-                        <span>{module.name}</span>
+                        <span className="button-module-name">{module.name}</span>
                         <br />
                         <span className="button-description">{module.description}</span>
                       </div>

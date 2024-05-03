@@ -54,7 +54,7 @@ const SideNavbarPage = () => {
                 ))}
                 {/* Back button */}
                 <Link to="/learning">
-                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>Go Back</Button>
+                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: "var(--primary-color)", border: '1px solid black' }}>Go Back</Button>
                 </Link>
             </div>
             {/* Main Content */}
@@ -69,6 +69,7 @@ const SideNavbarPage = () => {
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}
+                            <hr className="section-separation-line"></hr>
                         </div>
                     ))}
                 </Container>
