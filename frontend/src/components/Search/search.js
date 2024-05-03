@@ -59,10 +59,28 @@ export default function Search(props) {
 
   const handleEmissionChange = (category) => {
     setSelectedEmissions((prev) => {
-      return prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category];
+      const mappedCategory = mapCategoryToFilter(category);
+      return prev.includes(mappedCategory)
+        ? prev.filter((c) => c !== mappedCategory)
+        : [...prev, mappedCategory];
     });
+  };
+
+  const mapCategoryToFilter = (categoryLabel) => {
+    switch (categoryLabel) {
+      case "0 grams/mile":
+        return "zero";
+      case "1-100 grams/mile":
+        return "0-100";
+      case "100-200 grams/mile":
+        return "100-200";
+      case "200-300 grams/mile":
+        return "200-300";
+      case "300+ grams/mile":
+        return "300+";
+      default:
+        return "";
+    }
   };
 
   const handlePriceChange = (price) => {
@@ -261,7 +279,7 @@ useEffect(() => {
                 <input
                   type="checkbox"
                   id={`emission-${category}`}
-                  checked={selectedEmissions.includes(category)}
+                  checked={selectedEmissions.includes(mapCategoryToFilter(category))}
                   onChange={() => handleEmissionChange(category)}
                 />
                 <label htmlFor={`emission-${category}`}>{category}</label>
