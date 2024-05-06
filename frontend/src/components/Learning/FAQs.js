@@ -54,10 +54,10 @@ const SideNavbarPage = () => {
                         <div key={index} id={module.id} className="mt-5">
                             <h2>{module.name}</h2>
                             {(module.id === "Myths") && (
-                                <img className="infographic" src='/imgs/myths.png'/>
+                                <img className="infographic" src='/imgs/myths.png' alt="Common Myths Surrounding EVs"/>
                             )}
                                {(module.id === "FAQs") && (
-                                <img className="infographic" src='/imgs/FAQ.png'/>
+                                <img className="infographic" src='/imgs/FAQ.png' alt="Frequently Ask questions about EVs"/>
                             )}
                             {/* Render paragraphs */}
                             {module.paragraphs.map((paragraph, pIndex) => (
