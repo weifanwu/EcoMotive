@@ -3,19 +3,19 @@ import Quizbody from './quizbody';
 import Results from './quizresult';
 
 const quiztitle = [
+  'What do you want most from your next vehicle?',
   'What price range are you looking for?',
-  'Which type of powertrain do you prefer for your next vehicle?',
-  'What level of CO2 emissionfs are you comfortable with for your next vehicle?',
-  'What level of fuel efficiency are you looking for in your next vehicle?',
-  'What is your expectation for cost savings or additional expenses over five years of vehicle ownership?',
+  'What size car are you looking for?',
+  'Do you prefer a fully electric car?',
+  'How do you plan to utilize your car for transportation?',
 ];
 
 const quizzes = [
+  ['Range', 'Luxury', 'Environmentally Friendly', 'Affordability'], //new
   ['Under $30,000', '$30,000 to $35,000', '$35,000 to $40,000', '$40,000 to $45,000', 'above $45,000','No preference'],
-  ['Electric Vehicle (EV)', 'Hybrid Vehicle', 'Gas Vehicle (Gas)', 'EV and Hybrid', 'Gas and Hybrid', 'All types of cars'],
-  ['0 g/km CO2', 'below 100 g/km CO2', '100 to 200 g/km CO2', 'above 200 g/km CO2','No preference'],
-  ['100 MPG and above', '75 to 99 MPG', '50 to 74 MPG', '25 to 49 MPG', 'below 25 MPG','No preference'],
-  ['More than $6,000', '$4,000 to $6,000', '$2,000 to $4,000', 'Save up to $2,000', 'No preference'],
+  ['Small (Under 4 seats)', 'Medium (5-6 seats)', 'Large (7+ seats)', 'No Preference'], //new
+  ['Yes', 'No'], //new
+  ['Errands', 'Commuting', 'Road Trips', 'Winter Driving', 'Car Camping', 'Leisure'] //new
 ];
 
 export default function Questionary(props){

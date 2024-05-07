@@ -76,8 +76,9 @@ const SideNavbarPage = () => {
                                 <iframe style={{
                                     margin: "10px",
                                     border: "1px solid white"
-                                }} className="video" width="560" height="315" src="https://www.youtube.com/embed/9EquviskBQQ?si=IfwGDfBClKjJj0Gi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                }} className="video" width="560" height="315" src="https://www.youtube.com/embed/1PHkv3Ea3AY?si=qU742GPBCTaxu_Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 
+
                             )}
                             {(module.id === "Levels") && (
                                 <img className="infographic" src='/imgs/chargingguide.jpeg'/>
