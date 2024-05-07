@@ -20,9 +20,6 @@ body {
 
 /* Footer Styles */
 .footer {
-	position: absolute;
-	left: 0;
-	bottom: 0;
 	width: 100%;
 	background-color: var(--background-color);
 	color: var(--secondary-color);
@@ -506,8 +503,6 @@ body {
 	line-height: normal;
 }
 
-
-
 .homepage .text-wrapper-15 {
 	color: var(--secondary-color);
 	font-family: "Rubik", Helvetica;
@@ -676,7 +671,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 0rem 10rem 5rem 10rem;
+	padding: 0rem 5rem 2rem 5rem;
 	min-height: 100vh;
 }
 
@@ -770,6 +765,15 @@ body {
 .search .search-button {
 	background-color: var(--primary-color);
 	color: var(--background-color);
+}
+
+.search .info-favorite-btn {
+	color: var(--background-color);
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 20px 5px 0px 5px;
 }
 
 .search .info-btn {

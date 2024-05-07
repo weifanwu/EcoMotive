@@ -104,7 +104,7 @@ export default function CarModel(props) {
         </a>
         {(pathname === '/Profile' || collections.includes(car.title)) ?
             <div
-                className="info-btn" 
+                className="info-favorite-btn"
                 onClick={() => {
                 const indexToRemove = props.profile.carCollections.findIndex(carModel => carModel.trim() === car.title.trim());
                 if (indexToRemove !== -1) {
@@ -119,7 +119,7 @@ export default function CarModel(props) {
             </div>
         : 
             <div 
-                className="info-btn" 
+                className="info-favorite-btn" 
                 onClick={() => {
                 props.profile.carCollections.push(car.title);
                 props.setDeleteCar(!props.deleteCar);

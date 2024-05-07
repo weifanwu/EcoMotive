@@ -1,13 +1,8 @@
 import React from "react";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { Avatar, Dropdown, Button, Menu } from 'antd';
+import { Outlet, NavLink } from "react-router-dom";
+import { Avatar, Dropdown, Menu } from 'antd';
 
 function Navbar(props) {
-	const history = useNavigate();
-
-	const redirectToProfile = () => {
-	  history("/Profile");
-	};
 
 	return (
 		<div>
@@ -84,15 +79,17 @@ function Navbar(props) {
 									overlay={(
 										<Menu>
 											<Menu.Item key="logout">
-												<Button style={{ marginLeft: "10px"}} onClick={async () => {
+												<NavLink onClick={async () => {
 													window.open(process.env.REACT_APP_BACKEND_HOST + "/auth/logout", "_self");
-												}}>Logout</Button>
+												}}>Logout</NavLink>
+											</Menu.Item>
+											<Menu.Item key="profile">
+												<NavLink to="/Profile">Profile</NavLink>
 											</Menu.Item>
 										</Menu>
 									)}
 								>
-									<Avatar onClick={() => {
-										redirectToProfile();
+									<Avatar style={{ marginTop: "11px" }} onClick={() => {
 									}} src={props.profile.avatar} />
 								</Dropdown>
 								}
