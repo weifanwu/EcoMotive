@@ -112,26 +112,11 @@ export default function Home(props) {
                 How Do I Know What Vehicle to Buy?
               </p>
               <div className="row-container">
-                <a href="/Quiz" className="button-link">
-                  <div className="overlap-group-2">
-                    <div className="text-wrapper-4">Take a Quiz</div>
-                    <p className="text-wrapper-13">
-                      Take our quiz to discover the perfect car that suits your
-                      lifestyle and preferences
-                    </p>
-                    <img
-                      className="target-icon"
-                      alt="Target icon"
-                      src="imgs/target-icon.png"
-                    />
-                  </div>
-                </a>
                 <a href="/Search" className="button-link">
                   <div className="overlap-group-2">
-                    <div className="text-wrapper-4">Search for Cars</div>
+                    <div className="text-wrapper-4">Search & Filter</div>
                     <p className="text-wrapper-13">
-                      Easily search a diverse range of cars to discover your
-                      ideal vehicle
+                      Look through cars to discover your ideal vehicle
                     </p>
                     <img
                       className="img"
@@ -140,6 +125,21 @@ export default function Home(props) {
                     />
                   </div>
                 </a>
+
+                <a href="/Quiz" className="button-link">
+                  <div className="overlap-group-2">
+                    <div className="text-wrapper-4">Take a Quiz</div>
+                    <p className="text-wrapper-13">
+                     Take our quiz to discover the perfect car for you
+                    </p>
+                    <img
+                      className="target-icon"
+                      alt="Target icon"
+                      src="imgs/target-icon.png"
+                    />
+                  </div>
+                </a>
+                
 
                 <a href="/Compare" className="button-link">
                   <div className="overlap-group-2">
@@ -152,8 +152,7 @@ export default function Home(props) {
                       />
                     </div>
                     <p className="text-wrapper-6">
-                      Effortlessly compare features, pricing, and mileage to
-                      find your perfect car
+                      Effortlessly compare features between cars
                     </p>
                   </div>
                 </a>
