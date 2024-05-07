@@ -97,8 +97,10 @@ body {
 }
 
 .btn-custom-width {
-	width: 500px; 
-
+	width: 750px; 
+	padding: 15px;
+	margin: 3px;
+	border-radius: 20px;
   }
   
 
@@ -1929,4 +1931,41 @@ input[type="radio"] {
     }
 
 	
+}
+
+.mt-5 h2 {
+	color: var(--primary-color);
+	font-family: "Rubik", Helvetica;
+	text-align: left;
+}
+
+.mt-5 {
+	font-family: "Rubik", Helvetica;
+	text-align: left;
+}
+
+.mt-5 p {
+	font-size: 15pt;
+}
+
+.section-separation-line {
+	margin-top: 45px;
+	border-color: white;
+}
+
+.infographic {
+	max-width: 80%;
+	height: auto;
+}
+
+.button-module-name {
+	font-family: "Rubik", Helvetica;
+	font-size: 18pt;
+	font-weight: 800;
+}
+
+.button-description {
+	font-family: "Rubik", Helvetica;
+	font-size: 13pt;
+	font-weight: 100;
 }

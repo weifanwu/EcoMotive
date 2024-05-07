@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 const SideNavbarPage = () => {
     const modules = [
         { 
-            name: 'Coming soon', 
-            id: 'Coming soon', 
+            name: 'Future Trends', 
+            id: 'Future Trends', 
             paragraphs: [
                
             ]
@@ -36,7 +36,7 @@ const SideNavbarPage = () => {
                 ))}
                 {/* Back button */}
                 <Link to="/learning">
-                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>Go Back</Button>
+                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: "var(--primary-color)", border: '1px solid black' }}>Go Back</Button>
                 </Link>
             </div>
             {/* Main Content */}
@@ -48,6 +48,9 @@ const SideNavbarPage = () => {
                         <div key={index} id={module.id} className="mt-5">
                             <h2>{module.name}</h2>
                             {/* Render paragraphs */}
+                            {(module.id === "Future Trends") && (
+                                <img className="infographic" src='/imgs/futuretrends.jpeg'/>
+                            )}
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}

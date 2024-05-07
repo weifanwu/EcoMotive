@@ -5,14 +5,11 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 const SideNavbarPage = () => {
     const modules = [
         { 
-            name: 'Government incentives and Rebates', 
+            name: 'Government Incentives and Rebates', 
             id: 'Incentives', 
             paragraphs: [
                 "Governments around the world offer various incentives to encourage the adoption of EVs",
-                `Examples of incentives:
-                Rebates
-                Tax credits (some up to $7,500)`,
-                "These incentives help reduce the upfront cost of purchasing an EV"
+                `Examples of incentives: Rebates, Tax credits (some up to $7,500)`
             ]
         },
         { 
@@ -56,7 +53,7 @@ const SideNavbarPage = () => {
                 ))}
                 {/* Back button */}
                 <Link to="/learning">
-                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: 'white', border: '1px solid black' }}>Go Back</Button>
+                    <Button className="btn-block mt-3" style={{ color: 'black', backgroundColor: "var(--primary-color)", border: '1px solid black' }}>Go Back</Button>
                 </Link>
             </div>
             {/* Main Content */}
@@ -68,9 +65,13 @@ const SideNavbarPage = () => {
                         <div key={index} id={module.id} className="mt-5">
                             <h2>{module.name}</h2>
                             {/* Render paragraphs */}
+                            {(module.id === "Incentives") && (
+                                <img className="infographic" src='/imgs/govincentives.jpeg'/>
+                            )}
                             {module.paragraphs.map((paragraph, pIndex) => (
                                 <p key={pIndex}>{paragraph}</p>
                             ))}
+                            <hr className="section-separation-line"></hr>
                         </div>
                     ))}
                 </Container>
