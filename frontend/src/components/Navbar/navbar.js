@@ -78,13 +78,13 @@ function Navbar(props) {
 									<Dropdown
 									overlay={(
 										<Menu>
+											<Menu.Item key="profile">
+												<NavLink to="/Profile">Profile</NavLink>
+											</Menu.Item>
 											<Menu.Item key="logout">
 												<NavLink onClick={async () => {
 													window.open(process.env.REACT_APP_BACKEND_HOST + "/auth/logout", "_self");
 												}}>Logout</NavLink>
-											</Menu.Item>
-											<Menu.Item key="profile">
-												<NavLink to="/Profile">Profile</NavLink>
 											</Menu.Item>
 										</Menu>
 									)}
