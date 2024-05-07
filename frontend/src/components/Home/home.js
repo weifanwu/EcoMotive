@@ -29,8 +29,8 @@ export default function Home(props) {
                   Emissions
                 </div>
                 <p className="text-wrapper-14 mt-5">
-                  Your Guide to Sustainable Transportation Solutions for a
-                  Greener Future.
+                  Your Guide to Electric and Hybrid Vehicles 
+                  for a Greener Future.
                 </p>
                 <div className="mt-5" onClick={scrollToTarget}>
 				  	<button type="button" className="text-wrapper-15 btn btn-custom-outline" onClick={scrollToTarget}>
@@ -41,38 +41,26 @@ export default function Home(props) {
               </div>
               <div className="section2">
                 <p className="why-should-you-care" id="target-element">
-                  Why should you
+                  Why should you care
                   <br />
-                  care about
-                  <br />
-                  carbon emissions?
+                  about carbon emissions?
                 </p>
                 <p className="text-wrapper-10">
-                  Carbon emissions are a critical issue because they are the
-                  primary drivers of climate change. The excess carbon dioxide
-                  in our atmosphere traps heat, leading to global warming, which
-                  in turn results in more extreme weather events, rising sea
-                  levels, and threats to our ecosystems. These changes affect
-                  everything from food production to water resources and can
-                  even impact your health due to increased air pollution. By
-                  caring about carbon emissions, you can play a part in
-                  mitigating these effects, ensuring a sustainable and healthier
-                  future for yourself, your community, and the entire planet.
+                  Carbon emissions drive climate change, causing global warming, 
+                  extreme weather, rising sea levels, and threats to ecosystems. 
+                  This impacts food, water, and health. Caring about emissions 
+                  lets you contribute to a sustainable and healthier future for 
+                  yourself and the planet.
                 </p>
               </div>
               <div className="section3">
                 <p className="why-buy-a-fuel">
-                  Why buy a Fuel-
-                  <br />
-                  Efficient or
-                  <br />
-                  Electric Cars?
+                  Why buy an EV or Hybrid?
                 </p>
                 <p className="text-wrapper-11">
-                  Purchasing a fuel-efficient or electric car offers
-                  environmental and economic benefits which lead to personal and
-                  environmental advantages. For more detailed information,
-                  consider watching a related video.
+                  Choosing a fuel-efficient or electric car reduces carbon emissions, 
+                  saves on fuel costs, and benefits the environment, offering both 
+                  economic and ecological advantages.
                 </p>
                 <iframe
                   className="video"
@@ -88,32 +76,24 @@ export default function Home(props) {
 
             <div className="overlap-2">
               <p className="of-all-emissions">
-                of all CO2 emissions in cities&nbsp;&nbsp;come from motor
-                vehicle exhaust
+                of urban CO2 come from vehicle exhaust
               </p>
               <p className="text-wrapper">
-                is the average savings that ev drivers tend to save on fuel
-                costs compared to gas cars
+                fuel cost savings for EV drivers
               </p>
               <div className="text-wrapper-2">95%</div>
               <div className="text-wrapper-3">60%</div>
               <img
                 className="tree-vector"
                 alt="Tree vector"
-                src="/imgs/tree.svg"
+                src="/imgs/tree.png"
               />
-              <img
-                className="group"
-                alt="Small Green Car"
-                src="/imgs/green-car.png"
-              />
+              
               <p className="text-wrapper-7">
-                of CO2 is emitted on average for every passenger vehicle per
-                year
+                of CO2 emitted per passenger vehicle yearly
               </p>
               <p className="text-wrapper-8">
-                premature deaths worldwide each year are a result of poor air
-                quality from carbon emissions
+                annual premature deaths from air pollution
               </p>
               <p className="element-metric-tons">
                 <span className="span">4.6</span>
