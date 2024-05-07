@@ -67,7 +67,7 @@ const Results = ({ selectedOptions, cars, profile }) => {
   const [collections, setCollections] = useState([]);
   let priceRange, carTypes, co2EmissionRange, mpgRange, savingsRange;
   const [deleteCar, setDeleteCar] = useState(false);
-  // Price Range
+  // #1 Price Range
   const priceMapping = {
     'Under $30,000': [0, 30000],
     '$30,000 to $35,000': [30000, 35000],
@@ -78,7 +78,7 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   priceRange = priceMapping[selectedOptions[0]];
 
-  // Car Types
+  // Car Types --> #2 Size Car
   const carTypeMapping = {
     'Electric Vehicle (EV)': ['EV'],
     'Hybrid Vehicle': ['Hybrid'],
@@ -89,7 +89,18 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   carTypes = carTypeMapping[selectedOptions[1]];
 
-  // CO2 Emission Range
+  /* #2 Size Car Attempt
+  const carSizeQuiz = {
+    'Small (Under 4 seats)': [0, 4],
+    'Medium (5-6 seats)': [5, 6],
+    'Large (7+ seats)': [7, Infinity],
+    'No Preference': [0, Infinity]
+  }
+  ??? = carSizeQuiz[selectedOptions[1]];
+
+  */
+
+  // CO2 Emission Range --> #3 Preference on EV or Hybrid
   const co2Mapping = {
     '0 g/km CO2': [0, 0],
     'below 100 g/km CO2': [0, 100],
@@ -99,18 +110,16 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   co2EmissionRange = co2Mapping[selectedOptions[2]];
 
-  // MPG Range
+  // #4 MPG Range
   const mpgMapping = {
-    '100 MPG and above': [100, Infinity],
-    '75 to 99 MPG': [75, 99],
-    '50 to 74 MPG': [50, 74],
-    '25 to 49 MPG': [25, 49],
-    'below 25 MPG': [0, 25],
-    'No preference': [0, Infinity]
+    'Low': [0, 49],
+    'Average': [50, 99], 
+    'High': [100, Infinity], 
+    'No Preference': [0, Infinity]
   };
   mpgRange = mpgMapping[selectedOptions[3]];
 
-  // Savings Range
+  // Savings Range --> #5 Utilization for Transportation
   const savingsMapping = {
     'More than $6,000': [6000, Infinity],
     '$4,000 to $6,000': [4000, 6000],

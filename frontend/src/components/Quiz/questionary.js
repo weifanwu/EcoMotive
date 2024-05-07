@@ -3,18 +3,18 @@ import Quizbody from './quizbody';
 import Results from './quizresult';
 
 const quiztitle = [
-  'What do you want most from your next vehicle?',
   'What price range are you looking for?',
   'What size car are you looking for?',
   'Do you prefer a fully electric car?',
+  'What level of fuel efficiency (MPG) are you looking for?',
   'How do you plan to utilize your car for transportation?',
 ];
 
 const quizzes = [
-  ['Range', 'Luxury', 'Environmentally Friendly', 'Affordability'], //new
   ['Under $30,000', '$30,000 to $35,000', '$35,000 to $40,000', '$40,000 to $45,000', 'above $45,000','No preference'],
   ['Small (Under 4 seats)', 'Medium (5-6 seats)', 'Large (7+ seats)', 'No Preference'], //new
   ['Yes', 'No'], //new
+  ['Low', 'Average', 'High', 'No Preference'], //new
   ['Errands', 'Commuting', 'Road Trips', 'Winter Driving', 'Car Camping', 'Leisure'] //new
 ];
 
