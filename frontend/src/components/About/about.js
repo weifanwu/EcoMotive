@@ -50,8 +50,7 @@ export default function About() {
 					</div>
 					<img class="profile-image" src="/imgs/arianna.png" alt="Image 1" />
 					<div className="role">
-						<p>Business Analyst</p>
-						<p>UX Researcher</p>
+						<p>Business Analyst & Researcher</p>
 					</div>
 				</div>
 
@@ -63,8 +62,7 @@ export default function About() {
 					</div>
 					<img class="profile-image" src="/imgs/jackie.jpeg" alt="Image 2" />
 					<div className="role">
-						<p>Data Analyst</p>
-						<p>Software Engineer</p>
+						<p>Data Analyst & Software Engineer</p>
 					</div>
 				</div>
 
@@ -76,8 +74,7 @@ export default function About() {
 					</div>
 					<img class="profile-image" src="/imgs/steph.jpeg" alt="Image 3" />
 					<div className="role">
-						<p>Project Manager</p>
-						<p>UX Designer</p>
+						<p>Project Manager & UX Designer</p>
 					</div>
 				</div>
 			</div>
