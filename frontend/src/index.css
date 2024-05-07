@@ -1071,6 +1071,15 @@ input[type="radio"] {
 	top: 0;
 }
 
+.quiz-page .info-favorite-btn {
+	color: var(--background-color);
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 20px 5px 0px 5px;
+}
+
 .quiz-page .text-container {
 	display: flex;
 	justify-content: center;
