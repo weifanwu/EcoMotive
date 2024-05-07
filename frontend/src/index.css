@@ -124,7 +124,7 @@ body {
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 95%;
+    height: 70%;
 }
 
 .upper-section {
@@ -143,15 +143,15 @@ body {
 }
 
 .section2 {
-	margin-top: 75%;
+	margin-top: 40%;
 }
 
 .section3 {
-	margin-top: 75%;
+	margin-top: 65%;
 }
 
 .bottom-section {
-	margin-bottom: 100px;
+	margin-bottom: 0;
 }
 
 .homepage .drive-reduce {
@@ -170,7 +170,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: normal;
-
+	width: 1000px;
 }
 
 .homepage .overlap-2 {
@@ -186,12 +186,13 @@ body {
 	font-family: "Rubik", Helvetica;
 	font-size: 16px;
 	font-weight: 400;
-	left: 231px;
+	left: 225px;
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 1030px;
-	width: 137px;
+	text-align: center;
+	top: 1280px;
+	width: 160px;
 }
 
 .homepage .text-wrapper {
@@ -199,12 +200,12 @@ body {
 	font-family: "Rubik", Helvetica;
 	font-size: 16px;
 	font-weight: 400;
-	left: 231px;
+	left: 208px;
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 2079px;
-	width: 197px;
+	top: 1770px;
+	width: 250px;
 }
 
 .homepage .text-wrapper-2 {
@@ -216,7 +217,7 @@ body {
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 961px;
+	top: 1208px;
 	white-space: nowrap;
 	width: 137px;
 }
@@ -226,17 +227,17 @@ body {
 	font-family: "Rubik", Helvetica;
 	font-size: 70px;
 	font-weight: 400;
-	left: 231px;
+	left: 248px;
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 1992px;
+	top: 1695px;
 	white-space: nowrap;
-	width: 158px;
+	width: 100px;
 }
 
 .homepage .tree-vector {
-	height: 3050px;
+	height: normal;
 	left: 197px;
 	position: absolute;
 	top: 0;
@@ -350,7 +351,8 @@ body {
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 2402px;
+	text-align: center;
+	top: 1900px;
 	width: 213px;
 }
 
@@ -359,11 +361,12 @@ body {
 	font-family: "Rubik", Helvetica;
 	font-size: 16px;
 	font-weight: 400;
-	left: 650px;
+	left: 635px;
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 1401px;
+	text-align: center;
+	top: 1490px;
 	width: 213px;
 }
 
@@ -376,7 +379,7 @@ body {
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 2327px;
+	top: 1820px;
 	white-space: nowrap;
 	width: 228px;
 }
@@ -402,7 +405,7 @@ body {
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 1327px;
+	top: 1415px;
 	white-space: nowrap;
 	width: 228px;
 }
@@ -414,7 +417,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: 34px;
-	
+	width: 750px;
 }
 
 .homepage .text-wrapper-11 {
@@ -424,6 +427,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: 34px;
+	width: 850px;
 }
 
 .btn-custom-outline {
@@ -457,6 +461,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: normal;
+	width: 1000px;
 }
 
 .homepage .text-wrapper-12 {
@@ -467,6 +472,7 @@ body {
 	letter-spacing: 0;
 	line-height: normal;
 	padding-left: 70px;
+	padding-top: 260px;
 }
 
 .homepage .overlap-group-wrapper {
@@ -505,7 +511,8 @@ body {
 	font-weight: 400;
 	left: 0;
 	letter-spacing: 0;
-	line-height: normal;
+	line-height: 1.5;
+	width: 500px;
 }
 
 
@@ -1254,6 +1261,7 @@ input[type="radio"] {
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
+	text-align: center;
 	top: 52px;
 	width: 118px;
 }
@@ -1713,9 +1721,8 @@ input[type="radio"] {
 }
 
 .homepage .div {
-	height: 100%;
 	background-color: #191f0c;
-	height: 4073px;
+	height: 3000px;
 	overflow: hidden;
 	position: relative;
 	width: 1512px;
@@ -1863,7 +1870,7 @@ input[type="radio"] {
         flex-direction: column;
         align-items: center; 
 		padding-right: 80px;
-		margin-top: 100px;
+		margin-top: 50px;
     }
 
 	.homepage .drive-reduce  {
