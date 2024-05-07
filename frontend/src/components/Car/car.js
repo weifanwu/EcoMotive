@@ -79,15 +79,6 @@ export default function CarModel(props) {
         <div className="tag">{car.car_type}</div>
         <div className="tag">{getPriceCategory(car.price)}</div>
         <div className="tag">{car.number_of_seats} seats</div>
-        {car.apple_carplay === "TRUE" && (
-            <div className="tag"> Apple CarPlay</div>
-        )}
-        {car.keyless_entry === "TRUE" && (
-            <div className="tag"> Keyless Entry</div>
-        )}
-        {car.dynamic_cruise_control === "TRUE" && (
-            <div className="tag"> Dynamic Cruise</div>
-        )}
         <div className="card-info border-top border-bottom">
             <p className="card-description">Drive: {car.drive}</p>
             <p>Size: {car.vehicle_size_class}</p>
