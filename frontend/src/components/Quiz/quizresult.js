@@ -65,7 +65,7 @@ export const Box = (text) => {
 
 const Results = ({ selectedOptions, cars, profile }) => {
   const [collections, setCollections] = useState([]);
-  let priceRange, carTypes, co2EmissionRange, mpgRange, savingsRange;
+  let priceRange, carSizes, carType, mpgRange, totalRange;
   const [deleteCar, setDeleteCar] = useState(false);
   // #1 Price Range
   const priceMapping = {
@@ -78,38 +78,46 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   priceRange = priceMapping[selectedOptions[0]];
 
-  // Car Types --> #2 Size Car
-  const carTypeMapping = {
-    'Electric Vehicle (EV)': ['EV'],
-    'Hybrid Vehicle': ['Hybrid'],
-    'Gas Vehicle (Gas)': ['Gas'],
-    'EV and Hybrid': ['EV', 'Hybrid'],
-    'Gas and Hybrid': ['Gas', 'Hybrid'],
-    'All types of cars': ['EV', 'Hybrid', 'Gas']
-  };
-  carTypes = carTypeMapping[selectedOptions[1]];
+  // // #2 Car Types   <-- old one
+  // const carTypeMapping = {
+  //   'Electric Vehicle (EV)': ['EV'],
+  //   'Hybrid Vehicle': ['Hybrid'],
+  //   'Gas Vehicle (Gas)': ['Gas'],
+  //   'EV and Hybrid': ['EV', 'Hybrid'],
+  //   'Gas and Hybrid': ['Gas', 'Hybrid'],
+  //   'All types of cars': ['EV', 'Hybrid', 'Gas']
+  // };
+  // carTypes = carTypeMapping[selectedOptions[1]];
 
-  /* #2 Size Car Attempt
-  const carSizeQuiz = {
+  // #2 Size Car Attempt 
+  const carSizeMapping = {
     'Small (Under 4 seats)': [0, 4],
     'Medium (5-6 seats)': [5, 6],
     'Large (7+ seats)': [7, Infinity],
     'No Preference': [0, Infinity]
   }
-  ??? = carSizeQuiz[selectedOptions[1]];
+  carSizes = carSizeMapping[selectedOptions[1]];
 
-  */
 
-  // CO2 Emission Range --> #3 Preference on EV or Hybrid
-  const co2Mapping = {
-    '0 g/km CO2': [0, 0],
-    'below 100 g/km CO2': [0, 100],
-    '100 to 200 g/km CO2': [100, 200],
-    'above 200 g/km CO2': [200, Infinity],
-    'No preference': [0, Infinity]
+  // // #3 CO2 Emission Range        <-- old one
+  // const co2Mapping = {
+  //   '0 g/km CO2': [0, 0],
+  //   'below 100 g/km CO2': [0, 100],
+  //   '100 to 200 g/km CO2': [100, 200],
+  //   'above 200 g/km CO2': [200, Infinity],
+  //   'No preference': [0, Infinity]
+  // };
+  // co2EmissionRange = co2Mapping[selectedOptions[2]];
+
+  
+   // #3 Preference on EV or Hybrid ^^^
+  const preferenceEvHyb = {
+    'Yes': ['EV'],
+    'No': ['Hybrid'],
+    'Not Sure': ['EV', "Hybrid"]
   };
-  co2EmissionRange = co2Mapping[selectedOptions[2]];
-
+  carType = preferenceEvHyb[selectedOptions[2]];
+  
   // #4 MPG Range
   const mpgMapping = {
     'Low': [0, 49],
@@ -119,15 +127,26 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   mpgRange = mpgMapping[selectedOptions[3]];
 
-  // Savings Range --> #5 Utilization for Transportation
+  // #5 Savings Range       <-- old one
+  // const savingsMapping = {
+  //   'More than $6,000': [6000, Infinity],
+  //   '$4,000 to $6,000': [4000, 6000],
+  //   '$2,000 to $4,000': [2000, 4000],
+  //   'Save up to $2,000': [0, 2000],
+  //   'No preference': [0, Infinity]
+  // };
+  // savingsRange = savingsMapping[selectedOptions[4]];
+
+  //#5 Utilization for Transportation
   const savingsMapping = {
-    'More than $6,000': [6000, Infinity],
-    '$4,000 to $6,000': [4000, 6000],
-    '$2,000 to $4,000': [2000, 4000],
-    'Save up to $2,000': [0, 2000],
-    'No preference': [0, Infinity]
+    'Errands': [0, 200], 
+    'Commuting': [0, 200], 
+    'Road Trips': [300, Infinity], 
+    'Winter Driving': [300, Infinity], 
+    'Car Camping': [300, Infinity], 
+    'Leisure': [0, Infinity]
   };
-  savingsRange = savingsMapping[selectedOptions[4]];
+  totalRange = savingsMapping[selectedOptions[4]];
 
   
 
@@ -135,15 +154,17 @@ const Results = ({ selectedOptions, cars, profile }) => {
 
   const filteredCars = cars.filter(car => {
     const price = parseFloat(car.price.replace(/[^0-9.]/g, ''));
-    const co2Emission = parseInt(car.co2_emission, 10);
+    const vehicleSize = parseInt(car.number_of_seats, 10);
+    // #3 none for words
+    //const co2Emission = parseInt(car.co2_emission, 10); GOES WITH CO2 QUESTIONS
     const mpg = parseInt(car.combined_MPG, 10);
-    const savings = parseInt(car.you_save_spend_in_5_years, 10);
+    const range = parseInt(car.range, 10);
 
-    return isInRange(price, priceRange) &&
-           carTypes.includes(car.car_type) &&
-           isInRange(co2Emission, co2EmissionRange) &&
-           isInRange(mpg, mpgRange) &&
-           isInRange(savings, savingsRange);
+    return price >= priceRange[0] && price <= priceRange[1] &&
+            vehicleSize >= carSizes[0] && vehicleSize <= carSizes[1] &&
+            carType.includes(car.car_type) &&
+            mpg >= mpgRange[0] && mpg <= mpgRange[1] &&
+            range >= totalRange[0]
   });
 
   filteredCars.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));

@@ -13,7 +13,7 @@ const quiztitle = [
 const quizzes = [
   ['Under $30,000', '$30,000 to $35,000', '$35,000 to $40,000', '$40,000 to $45,000', 'above $45,000','No preference'],
   ['Small (Under 4 seats)', 'Medium (5-6 seats)', 'Large (7+ seats)', 'No Preference'], //new
-  ['Yes', 'No'], //new
+  ['Yes', 'No', 'Not Sure'], //new
   ['Low', 'Average', 'High', 'No Preference'], //new
   ['Errands', 'Commuting', 'Road Trips', 'Winter Driving', 'Car Camping', 'Leisure'] //new
 ];
