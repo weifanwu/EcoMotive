@@ -6,7 +6,7 @@ const quiztitle = [
   'What price range are you looking for?',
   'What size car are you looking for?',
   'Do you prefer a fully electric car?',
-  'What level of fuel efficiency (MPG) are you looking for?',
+  'What level of fuel efficiency(MPG) are you looking for?',
   'How do you plan to utilize your car for transportation?',
 ];
 

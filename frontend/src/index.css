@@ -871,6 +871,7 @@ input[type="radio"] {
 .about-page {
 	background-color: var(--background-color);
 	padding-bottom: 20px;
+	font-family: "Rubik", Helvetica;
 }
 
 .about-container {
@@ -1433,7 +1434,7 @@ input[type="radio"] {
 }
 
 .quiz-body .rectangle {
-	border: 3px solid;
+	border: 1px solid;
 	border-color: #d7f379;
 	border-radius: 10px;
 	height: 50px;
@@ -1467,7 +1468,7 @@ input[type="radio"] {
 
 .rectangle-default {
 	border: 3px solid #d7f379;
-	border-radius: 10px;
+	border-radius: 20px;
 	height: 30px;
 	width: 30px;
 	display: inline-block;

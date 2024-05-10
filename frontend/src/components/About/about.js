@@ -25,10 +25,10 @@ export default function About() {
 
 					<h1>Our Mission</h1>
 					<p>
-						Our goal is to inform young adult car buyers about carbon emissions from cars to help minimize the environmental
+						Our goal is to inform new car buyers about carbon emissions from cars to help minimize the environmental
 						impact of their commutes.
 					</p>
-					<p>We are driven to make a difference by encouraging young adults to make better informed decisions about purchasing cars in favor of the environment.
+					<p>We are driven to make a difference by encouraging them to make better informed decisions about purchasing cars in favor of the environment.
 					</p>
 				</div>
 			</div>
@@ -113,7 +113,7 @@ export default function About() {
 					<p>
 						We sourced our carbon emission data from the U.S. Department of Energy.
 						We cleaned this dataset to remove unnecessary measurements and added columns to include external links,
-						images, and boolean values for car features (e.g. Apple CarPlay, etc.)
+						images, and boolean values for car features. 
 						Next, we converted the file into json to import to our website.
 					</p>
 					<h1>Learn More</h1>
@@ -121,12 +121,12 @@ export default function About() {
 						Learn more about our project here: <a href="/imgs/X-Scape Presentation Slides.pdf" target="_blank" rel="noopener noreferrer">
 							Click to View Presentation
 						</a>
-					</p>
-					<p>
+						<br></br>
 						View our Github Repo:  <a href="https://github.com/UW-INFO442-AU23/sus-city" target="_blank" rel="noopener noreferrer">
 							EcoMotive Repo
 						</a>
 					</p>
+					
 				</div>
 				<div className="about-data-image-container">
 					<img className="about-data-image" src="/imgs/excel-pic.png" alt="About the Data Image" />
