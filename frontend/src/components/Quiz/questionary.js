@@ -15,7 +15,7 @@ const quizzes = [
   ['Small (Under 4 seats)', 'Medium (5-6 seats)', 'Large (7+ seats)', 'No Preference'], //new
   ['Yes', 'No', 'Not Sure'], //new
   ['Low', 'Average', 'High', 'No Preference'], //new
-  ['Errands', 'Commuting', 'Road Trips', 'Winter Driving', 'Car Camping', 'Leisure'] //new
+  ['Errands (Low Distance)', 'Commuting (Medium Distance)', 'Road Trips (High Distance)', 'No preference'] //new
 ];
 
 export default function Questionary(props){

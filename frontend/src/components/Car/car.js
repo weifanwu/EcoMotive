@@ -83,6 +83,7 @@ export default function CarModel(props) {
             <p className="card-description">Drive: {car.drive}</p>
             <p>Size: {car.vehicle_size_class}</p>
             <p>CO2 Emission: {car.co2_emission} grams/mile</p>
+            <p>Range: {car.range} Miles on a Full Tank</p>
         </div>
         <a
             href={car.external_link}

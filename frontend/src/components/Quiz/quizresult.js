@@ -78,17 +78,6 @@ const Results = ({ selectedOptions, cars, profile }) => {
   };
   priceRange = priceMapping[selectedOptions[0]];
 
-  // // #2 Car Types   <-- old one
-  // const carTypeMapping = {
-  //   'Electric Vehicle (EV)': ['EV'],
-  //   'Hybrid Vehicle': ['Hybrid'],
-  //   'Gas Vehicle (Gas)': ['Gas'],
-  //   'EV and Hybrid': ['EV', 'Hybrid'],
-  //   'Gas and Hybrid': ['Gas', 'Hybrid'],
-  //   'All types of cars': ['EV', 'Hybrid', 'Gas']
-  // };
-  // carTypes = carTypeMapping[selectedOptions[1]];
-
   // #2 Size Car Attempt 
   const carSizeMapping = {
     'Small (Under 4 seats)': [0, 4],
@@ -99,18 +88,7 @@ const Results = ({ selectedOptions, cars, profile }) => {
   carSizes = carSizeMapping[selectedOptions[1]];
 
 
-  // // #3 CO2 Emission Range        <-- old one
-  // const co2Mapping = {
-  //   '0 g/km CO2': [0, 0],
-  //   'below 100 g/km CO2': [0, 100],
-  //   '100 to 200 g/km CO2': [100, 200],
-  //   'above 200 g/km CO2': [200, Infinity],
-  //   'No preference': [0, Infinity]
-  // };
-  // co2EmissionRange = co2Mapping[selectedOptions[2]];
-
-  
-   // #3 Preference on EV or Hybrid ^^^
+  // #3 Preference on EV or Hybrid ^^^
   const preferenceEvHyb = {
     'Yes': ['EV'],
     'No': ['Hybrid'],
@@ -138,15 +116,13 @@ const Results = ({ selectedOptions, cars, profile }) => {
   // savingsRange = savingsMapping[selectedOptions[4]];
 
   //#5 Utilization for Transportation
-  const savingsMapping = {
-    'Errands': [0, 200], 
-    'Commuting': [0, 200], 
-    'Road Trips': [300, Infinity], 
-    'Winter Driving': [300, Infinity], 
-    'Car Camping': [300, Infinity], 
-    'Leisure': [0, Infinity]
+  const rangeMapping = {
+    'Errands (Low Distance)': [0, 300], 
+    'Commuting (Medium Distance)': [300, 500], 
+    'Road Trips (High Distance)': [500, Infinity],
+    'No preference': [0, Infinity]
   };
-  totalRange = savingsMapping[selectedOptions[4]];
+  totalRange = rangeMapping[selectedOptions[4]];
 
   
 
@@ -164,9 +140,9 @@ const Results = ({ selectedOptions, cars, profile }) => {
             vehicleSize >= carSizes[0] && vehicleSize <= carSizes[1] &&
             carType.includes(car.car_type) &&
             mpg >= mpgRange[0] && mpg <= mpgRange[1] &&
-            range >= totalRange[0]
+            range >= totalRange[0] && range <= totalRange[1]; // Check if range is within the selected range
   });
-
+  
   filteredCars.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
 
 
