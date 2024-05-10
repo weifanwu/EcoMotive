@@ -102,8 +102,10 @@ body {
 .btn-custom-width {
 	width: 750px; 
 	padding: 15px;
+	padding-left: 25px;
 	margin: 3px;
 	border-radius: 20px;
+	text-align: middle;
   }
   
 
