@@ -1,6 +1,5 @@
-# EcoMotive
-### Group 2: Sus-city
-The published site can be viewed here: https://xscape.web.app/
+# EcoMotive: Your Guide to Electric and Hybrid Vehicles
+The published site can be viewed here: [https://ecomotive.netlify.app]
 
 ## Steps:
 
@@ -23,11 +22,11 @@ Our group’s primary focus among the United Nations Sustainable Development Goa
 - **Quiz:** Personalized quiz for users to find their top best fit cars.
 
 ## Group Members
-- Arianna Khan
-- Yifei Tao
-- Ethan Wang
 - Stephanie Wang
-- Cici Zhao
+- Taylor Russon
+- Arianna Khan
+- Jackie Chen
+- Weifan Wu
 
 ## User Personas
 The two user personas we used when designing our product can be found [here](UserPersonas.pdf)
