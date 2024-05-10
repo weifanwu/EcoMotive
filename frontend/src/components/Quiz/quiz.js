@@ -6,9 +6,9 @@ export default function Quiz(props) {
             <div className="text-container">
                 <p className="title">Ready to Discover Your Perfect Eco-Friendly Ride?</p >
                 <p className="take-the-car-finder">
-                    Take the car finder quiz to <br />
-                    find the car that suits <br />
-                    all your needs
+                    Take our quiz to discover the perfect car <br />
+                    that suits your lifestyle and preferences<br />
+                    
                 </p >
                 <a href="/Quiz/Questionary" className="button-link">
                     <div className="group">
