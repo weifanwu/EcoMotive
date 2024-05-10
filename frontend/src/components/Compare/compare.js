@@ -44,6 +44,7 @@ export default function Compare(props) {
                 { property: 'Classification', car1: filteredCars1.car_type, car2: filteredCars2.car_type },
                 { property: 'Drive Type', car1: filteredCars1.drive, car2: filteredCars2.drive },
                 { property: 'Carbon Emissions', car1: `${filteredCars1.co2_emission} grams/mile`, car2: `${filteredCars2.co2_emission} grams/mile` },
+                { property: 'Range', car1: `${filteredCars1.range} miles`, car2: `${filteredCars2.range} miles` }
             ];
             setComparisonResult(comparedData);
         } else {
