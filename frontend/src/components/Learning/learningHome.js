@@ -17,6 +17,7 @@ const LearningModulesPage = () => {
       <div className="learning-modules-page">
         <Container className="text-center mt-5 mb-5" style={{ paddingTop: '5rem' }}>
           <h1 className="learning-modules-title">Learning Modules</h1>
+          <p className="learning-modules-description">Your Guide to Sustainable Transportation Solutions for a Greener Future.</p>
           <Row className="justify-content-center mt-5">
             <div className="modules-wrapper">
               {modules.map((module, index) => (
