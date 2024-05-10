@@ -1489,17 +1489,29 @@ input[type="radio"] {
 	padding-bottom: 50px;
 }
 
-.type-solid-left-icon {
+.type-solid-left-icon-next {
 	align-items: flex-start;
 	background-color: #d7f379;
 	border-radius: 15px;
 	display: inline-flex;
 	padding: 6px 6px 6px 8px;
 	position: relative;
+	right: 200px;
 	border: none;
 }
 
-.type-solid-left-icon .text {
+.type-solid-left-icon-previous {
+	align-items: flex-start;
+	background-color: #d7f379;
+	border-radius: 15px;
+	display: inline-flex;
+	padding: 6px 6px 6px 8px;
+	position: relative;
+	left: 200px;
+	border: none;
+}
+
+.type-solid-left-icon-next .text {
 	align-items: flex-start;
 	display: inline-flex;
 	gap: 10px;
@@ -1507,7 +1519,29 @@ input[type="radio"] {
 	position: relative;
 }
 
-.type-solid-left-icon .label {
+.type-solid-left-icon-next .label {
+	color: white;
+	font-family: "Nunito Sans-Regular", Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 1.25px;
+	line-height: 16px;
+	margin-top: -1px;
+	position: relative;
+	white-space: nowrap;
+	width: fit-content;
+	color: rgb(0, 0, 0);
+}
+
+.type-solid-left-icon-previous .text {
+	align-items: flex-start;
+	display: inline-flex;
+	gap: 10px;
+	padding: 4px 8px 4px 6px;
+	position: relative;
+}
+
+.type-solid-left-icon-previous .label {
 	color: white;
 	font-family: "Nunito Sans-Regular", Helvetica, sans-serif;
 	font-size: 16px;

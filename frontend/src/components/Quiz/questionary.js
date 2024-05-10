@@ -18,7 +18,7 @@ const quizzes = [
   ['Errands (Low Distance)', 'Commuting (Medium Distance)', 'Road Trips (High Distance)', 'No preference'] //new
 ];
 
-export default function Questionary(props){
+export default function Questionary(props) {
   const profile = props.profile;
   let cars = props.cars;
   const [currentQuiz, setCurrentQuiz] = useState(0);

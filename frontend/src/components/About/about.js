@@ -114,7 +114,7 @@ export default function About() {
 						We sourced our carbon emission data from the U.S. Department of Energy.
 						We cleaned this dataset to remove unnecessary measurements and added columns to include external links,
 						images, and boolean values for car features. 
-						Next, we converted the file into json to import to our website.
+						Next, we converted the file into json and stored into MongoDB to import to our website.
 					</p>
 					<h1>Learn More</h1>
 					<p>

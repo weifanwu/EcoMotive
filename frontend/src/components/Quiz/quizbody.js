@@ -56,14 +56,14 @@ const Quizbody = ({ quizNumber, quizTitle, options, onSelectOption, onPrevious, 
       </div>
       <div className="button-container">
         {quizNumber >= 1 && (
-          <button onClick={handlePrevious} className="type-solid-left-icon">
+          <button onClick={handlePrevious} className="type-solid-left-icon-previous">
             <div className="text">
               <div className="label">Previous</div>
             </div>
           </button>
         )}
         <div className="next-button-placeholder"></div>
-        <button onClick={handleNext} className="type-solid-left-icon">
+        <button onClick={handleNext} className="type-solid-left-icon-next">
           <div className="text">
             <div className="label">{handleNextLabel}</div>
           </div>
