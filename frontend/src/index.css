@@ -96,7 +96,10 @@ body {
   }
 
 .learning-modules-title {
-	color: white;
+	color: var(--primary-color);
+	font-family: "Rubik", Helvetica;
+	font-size: 50px;
+	font-weight: 400;
 }
 
 .btn-custom-width {
@@ -1065,7 +1068,7 @@ input[type="radio"] {
 
 .quiz-page .title {
 	color: #d7f379;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 64px;
 	font-weight: 400;
 	left: 0;
@@ -1083,7 +1086,7 @@ input[type="radio"] {
 
 .quiz-page .take-the-car-finder {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -1119,7 +1122,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-2 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 15px;
@@ -1189,7 +1192,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-3 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 1209px;
@@ -1202,7 +1205,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-4 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 540px;
@@ -1215,7 +1218,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-5 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 657px;
@@ -1228,7 +1231,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-6 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 785px;
@@ -1241,7 +1244,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-7 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 932px;
@@ -1254,7 +1257,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-8 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 32px;
 	font-weight: 400;
 	left: 98px;
@@ -1293,7 +1296,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-9 {
 	color: #fffdfd;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 936px;
@@ -1306,7 +1309,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-10 {
 	color: #fffdfd;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 1237px;
@@ -1327,7 +1330,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-11 {
 	color: #fffdfd;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 0;
@@ -1350,7 +1353,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-12 {
 	color: #fffdfd;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 1081px;
@@ -1363,7 +1366,7 @@ input[type="radio"] {
 
 .quiz-page .text-wrapper-13 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 101px;
@@ -1527,7 +1530,7 @@ input[type="radio"] {
 }
 
 .quiz-result .title-container {
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	text-align: center;
 	width: 80%;
 }
@@ -1650,7 +1653,7 @@ input[type="radio"] {
 
 .quiz-result .text-wrapper-4 {
 	color: #ffffff;
-	font-family: "Rubik-Regular", Helvetica;
+	font-family: "Rubik", Helvetica;
 	font-size: 20px;
 	font-weight: 400;
 	left: 15px;
@@ -1782,7 +1785,7 @@ input[type="radio"] {
 
 	.quiz-page .title {
 		color: #d7f379;
-		font-family: "Rubik-Regular", Helvetica;
+		font-family: "Rubik", Helvetica;
 		font-size: 40px;
 		font-weight: 400;
 		left: 0;
