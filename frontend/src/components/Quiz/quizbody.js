@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Quizbody = ({ quizNumber, quizTitle, options, onSelectOption, onPrevious }) => {
+const Quizbody = ({ quizNumber, quizTitle, options, onSelectOption, onPrevious, maxQuizNumber }) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   useEffect(() => {
@@ -27,6 +27,7 @@ const Quizbody = ({ quizNumber, quizTitle, options, onSelectOption, onPrevious }
     onPrevious();
   };
 
+  const handleNextLabel = quizNumber === 4 ? "Submit" : "Next"; // Assuming the quiz questions are zero-indexed
 
   return (
     <div className="quiz-body">
@@ -64,7 +65,7 @@ const Quizbody = ({ quizNumber, quizTitle, options, onSelectOption, onPrevious }
         <div className="next-button-placeholder"></div>
         <button onClick={handleNext} className="type-solid-left-icon">
           <div className="text">
-            <div className="label">Next</div>
+            <div className="label">{handleNextLabel}</div>
           </div>
         </button>
       </div>

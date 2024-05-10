@@ -1985,3 +1985,9 @@ input[type="radio"] {
 	font-size: 13pt;
 	font-weight: 100;
 }
+
+.learning-modules-title {
+	font-family: "Rubik", Helvetica;
+	color: #d7f379;
+}
+
